@@ -771,3 +771,123 @@ ul { list-style: none; }
     transition-duration: 0.01ms !important;
   }
 }
+
+/* =========================================================
+   COLOUR SWATCHES
+   ========================================================= */
+.product-card__colours {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+  margin: 0.1rem 0;
+}
+
+.swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+.swatch--red    { background: #ef4444; }
+.swatch--orange { background: #f97316; }
+.swatch--yellow { background: #facc15; }
+.swatch--green  { background: #22c55e; }
+.swatch--blue   { background: #3b82f6; }
+.swatch--purple { background: #a855f7; }
+.swatch--pink   { background: #ec4899; }
+
+.colours-label {
+  font-size: 0.78rem;
+  color: var(--ff-muted);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin-left: 0.15rem;
+}
+
+/* Rainbow-edition label */
+.colours-label--rainbow {
+  background: linear-gradient(90deg, #ef4444, #f97316, #facc15, #22c55e, #3b82f6, #a855f7, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 900;
+}
+
+/* =========================================================
+   LIMITED EDITION CARD
+   ========================================================= */
+.product-card--limited-edition {
+  background: linear-gradient(160deg, #1e1537 0%, #1a0d30 60%, #0f1a2e 100%);
+  border-color: transparent;
+  /* animated rainbow border via outline trick */
+  box-shadow:
+    0 0 0 2px transparent,
+    0 0 20px rgba(168, 85, 247, 0.3),
+    inset 0 0 30px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.product-card--limited-edition::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+  padding: 2px;
+  background: linear-gradient(135deg, #ef4444, #f97316, #facc15, #22c55e, #3b82f6, #a855f7, #ec4899);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  animation: rainbowRotate 4s linear infinite;
+}
+
+@keyframes rainbowRotate {
+  0%   { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+.product-card--limited-edition:hover {
+  box-shadow:
+    0 0 0 2px transparent,
+    0 16px 48px rgba(168, 85, 247, 0.5),
+    inset 0 0 30px rgba(0, 0, 0, 0.2);
+  transform: translateY(-6px);
+}
+
+.badge--limited-edition {
+  background: linear-gradient(135deg, #facc15, #f97316, #ec4899, #a855f7);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 0.3rem 0.8rem;
+  border-radius: var(--radius-xl);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.limited-tag {
+  font-size: 0.65rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: linear-gradient(90deg, var(--ff-yellow), var(--ff-coral));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  vertical-align: middle;
+  margin-left: 0.4rem;
+}
+
+.product-card__colours--rainbow .swatch {
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.btn--card-rainbow {
+  background: linear-gradient(135deg, #ef4444, #f97316, #facc15, #22c55e, #3b82f6, #a855f7);
+  background-size: 200%;
+  animation: gradientShift 3s ease-in-out infinite alternate;
+}
