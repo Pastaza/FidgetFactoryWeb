@@ -26,10 +26,74 @@
                 </div>
             </div>
         </section>
+
+        <!-- 1. The Pre-Order Form -->
+        <section class="pre-order-section">
+            <h2>Pre-Order / Interest Form</h2>
+            <form id="preOrderForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+
+                <label for="fidget">Which fidget are you interested in?</label>
+                <select id="fidget" required>
+                    <option value="">Select a fidget...</option>
+                    <option value="Pass through">Pass through</option>
+                    <option value="Gear spinner">Gear spinner</option>
+                    <option value="Bearing spinner">Bearing spinner</option>
+                </select>
+
+                <label for="message">Message (Optional):</label>
+                <textarea id="message"></textarea>
+
+                <button type="submit">Submit Pre-Order</button>
+                <p id="formStatus" style="display:none;"></p>
+            </form>
+        </section>
     </main>
 
     <footer>
         <p>Made by Fidget Factory</p>
     </footer>
+
+    <!-- 2. Supabase Integration Script -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+        // PUT YOUR CREDENTIALS HERE
+        const supabaseUrl = 'YOUR_SUPABASE_URL_HERE';
+        const supabaseAnonKey = 'YOUR_SUPABASE_ANON_KEY_HERE';
+        
+        const supabaseClient = supabase.createClient(supabaseUrl, supabaseAnonKey);
+
+        document.getElementById('preOrderForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const statusText = document.getElementById('formStatus');
+            statusText.style.display = 'block';
+            statusText.innerText = 'Submitting...';
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const fidgetChoice = document.getElementById('fidget').value;
+            const message = document.getElementById('message').value;
+
+            const { data, error } = await supabaseClient
+                .from('pre_orders')
+                .insert([
+                    { name: name, email: email, fidget_choice: fidgetChoice, message: message }
+                ]);
+
+            if (error) {
+                console.error('Error:', error);
+                statusText.innerText = 'Error submitting. Please try again.';
+                statusText.style.color = 'red';
+            } else {
+                statusText.innerText = 'Thank you! Your pre-order interest has been saved.';
+                statusText.style.color = 'green';
+                document.getElementById('preOrderForm').reset();
+            }
+        });
+    </script>
 </body>
 </html>
