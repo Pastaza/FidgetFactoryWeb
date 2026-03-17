@@ -58,15 +58,8 @@
         <p>Made by Fidget Factory</p>
     </footer>
 
-    <!-- 2. Supabase Integration Script -->
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <!-- 2. Serverless API Integration Script -->
     <script>
-        // PUT YOUR CREDENTIALS HERE
-        const supabaseUrl = 'YOUR_SUPABASE_URL_HERE';
-        const supabaseAnonKey = 'YOUR_SUPABASE_ANON_KEY_HERE';
-        
-        const supabaseClient = supabase.createClient(supabaseUrl, supabaseAnonKey);
-
         document.getElementById('preOrderForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             const statusText = document.getElementById('formStatus');
@@ -78,20 +71,32 @@
             const fidgetChoice = document.getElementById('fidget').value;
             const message = document.getElementById('message').value;
 
-            const { data, error } = await supabaseClient
-                .from('pre_orders')
-                .insert([
-                    { name: name, email: email, fidget_choice: fidgetChoice, message: message }
-                ]);
+            try {
+                // Send data to the Vercel serverless function
+                const response = await fetch('/api/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        name: name,
+                        email: email,
+                        fidgetChoice: fidgetChoice,
+                        message: message
+                    })
+                });
 
-            if (error) {
-                console.error('Error:', error);
-                statusText.innerText = 'Error submitting. Please try again.';
-                statusText.style.color = 'red';
-            } else {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+
                 statusText.innerText = 'Thank you! Your pre-order interest has been saved.';
                 statusText.style.color = 'green';
                 document.getElementById('preOrderForm').reset();
+            } catch (error) {
+                console.error('Error:', error);
+                statusText.innerText = 'Error submitting. Please try again.';
+                statusText.style.color = 'red';
             }
         });
     </script>
