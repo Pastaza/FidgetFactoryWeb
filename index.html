@@ -1,35 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fidget Factory</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fidget Factory – Market Day at Selwyn College</title>
+  <meta name="description" content="Fidget Factory – grab your favourite fidget toys at our market day stall at Selwyn College, Auckland. Spinners, poppers, cubes and more!">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main>
-        <section class="hero">
-            <h1>Welcome to <span class="highlight">Fidget Factory</span></h1>
-            <p class="tagline">Buy it! I dare you.</p>
-        </section>
 
-        <section class="projects">
-            <h2>Products</h2>
-            <div class="project-grid">
-                <div class="product-card">
-                    <h3>Spinny Thing!</h3>
-                    <p>Go Spin Spin</p>
-                </div>
-                <div class="product-card">
-                    <h3>Octapuss</h3>
-                    <p>Eight arms of fidgeting fun</p>
-                </div>
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar" role="banner">
+    <div class="navbar__inner">
+      <a href="#" class="navbar__logo" aria-label="Fidget Factory home">
+        🌀 <span>Fidget Factory</span>
+      </a>
+      <nav aria-label="Site navigation">
+        <ul class="navbar__links">
+          <li><a href="#products">Products</a></li>
+          <li><a href="#specials">Specials</a></li>
+          <li><a href="#find-us">Find Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" aria-label="Hero banner">
+
+      <!-- Floating decorative shapes (aria-hidden) -->
+      <div class="hero__shapes" aria-hidden="true">
+        <span class="shape shape--circle shape--1">🌀</span>
+        <span class="shape shape--circle shape--2">⭐</span>
+        <span class="shape shape--circle shape--3">🎉</span>
+        <span class="shape shape--circle shape--4">💥</span>
+        <span class="shape shape--circle shape--5">🌈</span>
+        <span class="shape shape--circle shape--6">✨</span>
+        <div class="blob blob--1"></div>
+        <div class="blob blob--2"></div>
+        <div class="blob blob--3"></div>
+      </div>
+
+      <div class="hero__content">
+        <p class="hero__pre-title">🎪 Market Day is HERE</p>
+        <h1 class="hero__title">
+          Welcome to<br>
+          <span class="hero__brand">Fidget Factory</span>
+        </h1>
+        <p class="hero__sub">
+          Spinners · Poppers · Cubes · Snakes &amp; More<br>
+          <strong>Grab yours at Selwyn College, Auckland!</strong>
+        </p>
+        <div class="hero__ctas">
+          <a href="#products" class="btn btn--primary">Shop Now 🛒</a>
+          <a href="#specials" class="btn btn--outline">Today's Deals 🔥</a>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ===== PRODUCTS ===== -->
+    <section class="products" id="products" aria-labelledby="products-heading">
+      <div class="section-inner">
+        <h2 id="products-heading" class="section-title">Our Products</h2>
+        <p class="section-sub">All prices in NZD · Cash &amp; EFTPOS accepted</p>
+
+        <div class="product-grid">
+
+          <!-- Card 1 -->
+          <article class="product-card" aria-label="Spinner Ring">
+            <div class="product-card__badge badge--bestseller">Best Seller ⭐</div>
+            <div class="product-card__icon" aria-hidden="true">🌀</div>
+            <div class="product-card__body">
+              <h3 class="product-card__name">Spinner Ring</h3>
+              <p class="product-card__desc">Smooth-spin ring that keeps your hands busy. Satisfying every single time.</p>
+              <p class="product-card__price"><span class="price-currency">NZ$</span>5<span class="price-cents">.00</span></p>
+              <a href="#find-us" class="btn btn--card">Get One 🛒</a>
             </div>
-        </section>
-    </main>
+          </article>
 
-    <footer>
-        <p>Made by Fidget Factory</p>
-    </footer>
+          <!-- Card 2 -->
+          <article class="product-card" aria-label="Octapuss Fidget">
+            <div class="product-card__badge badge--new">New 🆕</div>
+            <div class="product-card__icon" aria-hidden="true">🐙</div>
+            <div class="product-card__body">
+              <h3 class="product-card__name">Octapuss</h3>
+              <p class="product-card__desc">Eight squishy arms of fidgeting fun – stretch, twist, and squish to your heart's content.</p>
+              <p class="product-card__price"><span class="price-currency">NZ$</span>8<span class="price-cents">.00</span></p>
+              <a href="#find-us" class="btn btn--card">Get One 🛒</a>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="product-card" aria-label="Pop Bubble Pad">
+            <div class="product-card__badge badge--popular">Popular 🔥</div>
+            <div class="product-card__icon" aria-hidden="true">🫧</div>
+            <div class="product-card__body">
+              <h3 class="product-card__name">Pop Bubble Pad</h3>
+              <p class="product-card__desc">Reusable silicone bubble popper – pop them all, flip it over, start again. So satisfying.</p>
+              <p class="product-card__price"><span class="price-currency">NZ$</span>6<span class="price-cents">.00</span></p>
+              <a href="#find-us" class="btn btn--card">Get One 🛒</a>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="product-card" aria-label="Infinity Cube">
+            <div class="product-card__icon" aria-hidden="true">🔲</div>
+            <div class="product-card__body">
+              <h3 class="product-card__name">Infinity Cube</h3>
+              <p class="product-card__desc">Fold and flip this compact cube in an endless loop – great for focus and stress relief.</p>
+              <p class="product-card__price"><span class="price-currency">NZ$</span>7<span class="price-cents">.00</span></p>
+              <a href="#find-us" class="btn btn--card">Get One 🛒</a>
+            </div>
+          </article>
+
+          <!-- Card 5 -->
+          <article class="product-card" aria-label="Wacky Track Snake">
+            <div class="product-card__badge badge--limited">Limited 🎯</div>
+            <div class="product-card__icon" aria-hidden="true">🐍</div>
+            <div class="product-card__body">
+              <h3 class="product-card__name">Wacky Track</h3>
+              <p class="product-card__desc">Snap-and-link chain that morphs into endless shapes – keep your fingers moving all day.</p>
+              <p class="product-card__price"><span class="price-currency">NZ$</span>9<span class="price-cents">.00</span></p>
+              <a href="#find-us" class="btn btn--card">Get One 🛒</a>
+            </div>
+          </article>
+
+          <!-- Card 6 -->
+          <article class="product-card" aria-label="Clicker Pen">
+            <div class="product-card__icon" aria-hidden="true">🖊️</div>
+            <div class="product-card__body">
+              <h3 class="product-card__name">Clicker Pen</h3>
+              <p class="product-card__desc">A real, working pen with a satisfying clicky top and fidget buttons on the side.</p>
+              <p class="product-card__price"><span class="price-currency">NZ$</span>5<span class="price-cents">.00</span></p>
+              <a href="#find-us" class="btn btn--card">Get One 🛒</a>
+            </div>
+          </article>
+
+        </div><!-- /product-grid -->
+      </div>
+    </section>
+
+    <!-- ===== MARKET DAY SPECIALS ===== -->
+    <section class="specials" id="specials" aria-labelledby="specials-heading">
+      <div class="section-inner">
+        <h2 id="specials-heading" class="section-title section-title--light">🔥 Market Day Specials</h2>
+        <p class="section-sub section-sub--light">One day only – don't miss out!</p>
+
+        <div class="specials-grid">
+
+          <div class="special-card special-card--bundle">
+            <div class="special-card__emoji" aria-hidden="true">🎁</div>
+            <h3>Starter Bundle</h3>
+            <p>Any <strong>3 items</strong> for just</p>
+            <p class="special-card__price">NZ$<span>15</span></p>
+            <p class="special-card__save">Save up to $7!</p>
+            <a href="#find-us" class="btn btn--primary">Grab Bundle</a>
+          </div>
+
+          <div class="special-card special-card--mega">
+            <div class="special-card__emoji" aria-hidden="true">💥</div>
+            <h3>Mega Pack</h3>
+            <p>All <strong>6 products</strong> for only</p>
+            <p class="special-card__price">NZ$<span>35</span></p>
+            <p class="special-card__save">Save $5 off full price!</p>
+            <a href="#find-us" class="btn btn--primary">Grab Pack</a>
+          </div>
+
+          <div class="special-card special-card--spin">
+            <div class="special-card__emoji" aria-hidden="true">🌀</div>
+            <h3>2× Spinner Deal</h3>
+            <p>Buy <strong>2 Spinner Rings</strong> &amp; get one for</p>
+            <p class="special-card__price">NZ$<span>8</span></p>
+            <p class="special-card__save">Save $2!</p>
+            <a href="#find-us" class="btn btn--primary">Grab Deal</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FIND US ===== -->
+    <section class="find-us" id="find-us" aria-labelledby="findus-heading">
+      <div class="section-inner find-us__inner">
+
+        <div class="find-us__info">
+          <h2 id="findus-heading" class="section-title">📍 Find Us at Market Day</h2>
+          <ul class="find-us__list" role="list">
+            <li>📚 <strong>Selwyn College</strong>, Auckland, New Zealand</li>
+            <li>🏫 Look for the <strong>Fidget Factory</strong> stall – you can't miss us!</li>
+            <li>💵 We accept <strong>Cash &amp; EFTPOS</strong> (contactless welcome)</li>
+            <li>🎒 Stock is <strong>limited</strong> – first come, first served</li>
+            <li>🤝 Bundle deals available <strong>on the day only</strong></li>
+          </ul>
+        </div>
+
+        <div class="find-us__payment">
+          <h3>Payment &amp; Pickup</h3>
+          <div class="payment-badges">
+            <span class="payment-badge">💵 Cash</span>
+            <span class="payment-badge">📱 EFTPOS</span>
+            <span class="payment-badge">📲 Contactless</span>
+          </div>
+          <p>Walk up to our stall, pick your fidgets, and pay on the spot. No pre-orders needed – just bring yourself and some spending money! 🎉</p>
+          <a href="#products" class="btn btn--primary btn--wide">Browse Products ↑</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <p class="footer__logo">🌀 Fidget Factory</p>
+      <p class="footer__tagline">Keeping hands busy, one fidget at a time.</p>
+      <p class="footer__copy">© 2025 Fidget Factory · Market Day Stall · Selwyn College, Auckland</p>
+    </div>
+  </footer>
+
 </body>
 </html>
