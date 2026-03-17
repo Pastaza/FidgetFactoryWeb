@@ -21,6 +21,7 @@
       <nav aria-label="Site navigation">
         <ul class="navbar__links">
           <li><a href="#products">Products</a></li>
+          <li><a href="#preorder">Pre-Order</a></li>
           <li><a href="#find-us">Find Us</a></li>
         </ul>
       </nav>
@@ -57,6 +58,7 @@
         </p>
         <div class="hero__ctas">
           <a href="#products" class="btn btn--primary">Shop Now 🛒</a>
+          <a href="#preorder" class="btn btn--outline">Pre-Order Free 📋</a>
           <a href="#find-us" class="btn btn--outline">Find Us 📍</a>
         </div>
       </div>
@@ -243,6 +245,192 @@
       </div>
     </section>
 
+    <!-- ===== PRE-ORDER ===== -->
+    <!--
+      SETUP: Replace YOUR_FORM_ID below with your Formspree form ID.
+      Sign up free at https://formspree.io → New Form → copy the ID (e.g. xpwzabcd).
+      Submissions will be emailed to you so you can count up demand before Market Day.
+    -->
+    <section class="preorder" id="preorder" aria-labelledby="preorder-heading">
+      <div class="section-inner">
+        <h2 id="preorder-heading" class="section-title section-title--light">📋 Pre-Order Interest</h2>
+        <p class="section-sub section-sub--light">Let us know what you want so we can make sure we have enough on the day!</p>
+
+        <div class="preorder__notice" role="note">
+          <span class="preorder__notice-icon" aria-hidden="true">💡</span>
+          <div>
+            <strong>How it works:</strong> This is completely <strong>free to submit</strong> – no payment, no commitment. It simply helps us know how much stock to bring. Come to our stall on Market Day, pick up your fidgets, and pay there. 💵
+          </div>
+        </div>
+
+        <!-- ── Pre-order form ── -->
+        <form class="preorder-form" id="preorder-form"
+              action="https://formspree.io/f/YOUR_FORM_ID"
+              data-setup="Replace YOUR_FORM_ID in the action attribute above with your Formspree form ID"
+              method="POST" novalidate>
+
+          <!-- Hidden subject line for email notifications -->
+          <input type="hidden" name="_subject" value="New Fidget Factory Pre-Order Interest">
+
+          <!-- Name -->
+          <div class="form-group">
+            <label class="form-label" for="preorder-name">
+              Your Name <span class="form-required" aria-label="required">*</span>
+            </label>
+            <input class="form-input" type="text" id="preorder-name" name="name"
+                   placeholder="e.g. Alex" required autocomplete="name">
+          </div>
+
+          <!-- Products -->
+          <fieldset class="form-fieldset">
+            <legend class="form-label">
+              What would you like? <span class="form-required" aria-label="required">*</span>
+            </legend>
+            <p class="form-hint">Tick each item you're interested in and choose a quantity. Prices shown for reference – pay on the day!</p>
+
+            <div class="preorder-items">
+
+              <div class="preorder-item">
+                <label class="preorder-item__check-label">
+                  <input type="checkbox" class="preorder-item__check" name="want_spiral" value="yes">
+                  <span class="preorder-item__icon" aria-hidden="true">🌀</span>
+                  <span class="preorder-item__name">Spiral Fidget <span class="preorder-item__price">NZ$5</span></span>
+                </label>
+                <label class="preorder-item__qty-label" aria-label="Quantity for Spiral Fidget">
+                  Qty:
+                  <select class="preorder-item__qty" name="qty_spiral" disabled aria-disabled="true">
+                    <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                    <option value="4">4</option><option value="5">5</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="preorder-item preorder-item--limited">
+                <label class="preorder-item__check-label">
+                  <input type="checkbox" class="preorder-item__check" name="want_multicolour_spiral" value="yes">
+                  <span class="preorder-item__icon" aria-hidden="true">🌀</span>
+                  <span class="preorder-item__name">Multi-Colour Spiral <span class="limited-tag">Limited</span> <span class="preorder-item__price">NZ$7</span></span>
+                </label>
+                <label class="preorder-item__qty-label" aria-label="Quantity for Multi-Colour Spiral">
+                  Qty:
+                  <select class="preorder-item__qty" name="qty_multicolour_spiral" disabled aria-disabled="true">
+                    <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="preorder-item preorder-item--special">
+                <label class="preorder-item__check-label">
+                  <input type="checkbox" class="preorder-item__check" name="want_passthrough" value="yes">
+                  <span class="preorder-item__icon" aria-hidden="true">🔮</span>
+                  <span class="preorder-item__name">Passthrough <span class="passthrough-tag">Special</span> <span class="preorder-item__price">NZ$8</span></span>
+                </label>
+                <label class="preorder-item__qty-label" aria-label="Quantity for Passthrough Special">
+                  Qty:
+                  <select class="preorder-item__qty" name="qty_passthrough" disabled aria-disabled="true">
+                    <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="preorder-item">
+                <label class="preorder-item__check-label">
+                  <input type="checkbox" class="preorder-item__check" name="want_octapuss" value="yes">
+                  <span class="preorder-item__icon" aria-hidden="true">🐙</span>
+                  <span class="preorder-item__name">Octapuss <span class="preorder-item__price">NZ$8</span></span>
+                </label>
+                <label class="preorder-item__qty-label" aria-label="Quantity for Octapuss">
+                  Qty:
+                  <select class="preorder-item__qty" name="qty_octapuss" disabled aria-disabled="true">
+                    <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                    <option value="4">4</option><option value="5">5</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="preorder-item">
+                <label class="preorder-item__check-label">
+                  <input type="checkbox" class="preorder-item__check" name="want_bubble_pad" value="yes">
+                  <span class="preorder-item__icon" aria-hidden="true">🫧</span>
+                  <span class="preorder-item__name">Pop Bubble Pad <span class="preorder-item__price">NZ$6</span></span>
+                </label>
+                <label class="preorder-item__qty-label" aria-label="Quantity for Pop Bubble Pad">
+                  Qty:
+                  <select class="preorder-item__qty" name="qty_bubble_pad" disabled aria-disabled="true">
+                    <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                    <option value="4">4</option><option value="5">5</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="preorder-item">
+                <label class="preorder-item__check-label">
+                  <input type="checkbox" class="preorder-item__check" name="want_infinity_cube" value="yes">
+                  <span class="preorder-item__icon" aria-hidden="true">🔲</span>
+                  <span class="preorder-item__name">Infinity Cube <span class="preorder-item__price">NZ$7</span></span>
+                </label>
+                <label class="preorder-item__qty-label" aria-label="Quantity for Infinity Cube">
+                  Qty:
+                  <select class="preorder-item__qty" name="qty_infinity_cube" disabled aria-disabled="true">
+                    <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                    <option value="4">4</option><option value="5">5</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="preorder-item">
+                <label class="preorder-item__check-label">
+                  <input type="checkbox" class="preorder-item__check" name="want_wacky_track" value="yes">
+                  <span class="preorder-item__icon" aria-hidden="true">🐍</span>
+                  <span class="preorder-item__name">Wacky Track <span class="preorder-item__price">NZ$9</span></span>
+                </label>
+                <label class="preorder-item__qty-label" aria-label="Quantity for Wacky Track">
+                  Qty:
+                  <select class="preorder-item__qty" name="qty_wacky_track" disabled aria-disabled="true">
+                    <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                    <option value="4">4</option><option value="5">5</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="preorder-item">
+                <label class="preorder-item__check-label">
+                  <input type="checkbox" class="preorder-item__check" name="want_clicker_pen" value="yes">
+                  <span class="preorder-item__icon" aria-hidden="true">🖊️</span>
+                  <span class="preorder-item__name">Clicker Pen <span class="preorder-item__price">NZ$5</span></span>
+                </label>
+                <label class="preorder-item__qty-label" aria-label="Quantity for Clicker Pen">
+                  Qty:
+                  <select class="preorder-item__qty" name="qty_clicker_pen" disabled aria-disabled="true">
+                    <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                    <option value="4">4</option><option value="5">5</option>
+                  </select>
+                </label>
+              </div>
+
+            </div><!-- /preorder-items -->
+          </fieldset>
+
+          <p class="form-error" id="preorder-error" role="alert" hidden></p>
+
+          <button type="submit" class="btn btn--primary btn--wide" id="preorder-submit">
+            Register My Interest 📋
+          </button>
+          <p class="preorder-form__no-payment">🎉 No payment required – you pay at the stall on Market Day!</p>
+
+        </form>
+
+        <!-- Success state (shown after submission) -->
+        <div class="preorder-success" id="preorder-success" hidden>
+          <span class="preorder-success__icon" aria-hidden="true">🎉</span>
+          <h3>Thanks for registering your interest!</h3>
+          <p>We've noted what you'd like. Just come find us at the <strong>Fidget Factory</strong> stall on Market Day and pay there. See you soon! 🌀</p>
+          <a href="#products" class="btn btn--primary">Browse Products ↑</a>
+        </div>
+
+      </div>
+    </section>
+
     <!-- ===== FIND US ===== -->
     <section class="find-us" id="find-us" aria-labelledby="findus-heading">
       <div class="section-inner find-us__inner">
@@ -253,6 +441,7 @@
             <li>📚 <strong>Selwyn College</strong>, Auckland, New Zealand</li>
             <li>🏫 Look for the <strong>Fidget Factory</strong> stall – you can't miss us!</li>
             <li>💵 We accept <strong>Cash &amp; EFTPOS</strong></li>
+            <li>📋 <a href="#preorder" class="find-us__preorder-link">Pre-order your interest</a> so we know what to bring!</li>
             <li>🎒 Stock is <strong>limited</strong> – first come, first served</li>
           </ul>
         </div>
@@ -263,7 +452,7 @@
             <span class="payment-badge">💵 Cash</span>
             <span class="payment-badge">📱 EFTPOS</span>
           </div>
-          <p>Walk up to our stall, pick your fidgets, and pay on the spot. No pre-orders needed – just bring yourself and some spending money! 🎉</p>
+          <p>Walk up to our stall, pick up your fidgets, and pay on the spot. Want to make sure we stock your favourite? <a href="#preorder" class="find-us__preorder-link">Register your interest above</a> – it's free! 🎉</p>
           <a href="#products" class="btn btn--primary btn--wide">Browse Products ↑</a>
         </div>
 
@@ -281,5 +470,6 @@
     </div>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>

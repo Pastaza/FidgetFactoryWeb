@@ -983,3 +983,283 @@ ul { list-style: none; }
   0%   { background-position: 0% 50%; }
   100% { background-position: 100% 50%; }
 }
+
+/* =========================================================
+   PRE-ORDER SECTION
+   ========================================================= */
+.preorder {
+  background: linear-gradient(160deg, #0f1a2e 0%, #1a1030 50%, #1e0a20 100%);
+  position: relative;
+}
+.preorder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 40%, rgba(250,204,21,0.08) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 60%, rgba(168,85,247,0.1) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+/* ── Notice banner ── */
+.preorder__notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: rgba(250, 204, 21, 0.08);
+  border: 1px solid rgba(250, 204, 21, 0.25);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--ff-text);
+}
+.preorder__notice-icon {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+/* ── Form wrapper ── */
+.preorder-form {
+  background: var(--ff-surface);
+  border: 1px solid var(--ff-border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ── Form primitives ── */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-label {
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: var(--ff-text);
+  display: block;
+}
+
+.form-required {
+  color: var(--ff-coral);
+  margin-left: 0.15rem;
+}
+
+.form-hint {
+  font-size: 0.85rem;
+  color: var(--ff-muted);
+  margin-bottom: 0.75rem;
+}
+
+.form-input {
+  background: var(--ff-surface2);
+  border: 1.5px solid var(--ff-border);
+  border-radius: var(--radius-md);
+  color: var(--ff-text);
+  font-family: var(--font);
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.65rem 1rem;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  width: 100%;
+}
+.form-input::placeholder { color: var(--ff-muted); font-weight: 400; }
+.form-input:focus {
+  outline: none;
+  border-color: var(--ff-purple-lt);
+  box-shadow: 0 0 0 3px rgba(168,85,247,0.25);
+}
+
+.form-fieldset {
+  border: none;
+  padding: 0;
+}
+
+/* ── Error message ── */
+.form-error {
+  background: rgba(239,68,68,0.12);
+  border: 1px solid rgba(239,68,68,0.35);
+  border-radius: var(--radius-md);
+  color: #fca5a5;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.75rem 1rem;
+}
+
+/* ── Product rows ── */
+.preorder-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.preorder-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: var(--ff-surface2);
+  border: 1.5px solid var(--ff-border);
+  border-radius: var(--radius-md);
+  padding: 0.65rem 1rem;
+  transition: border-color var(--transition), background var(--transition);
+}
+.preorder-item:has(.preorder-item__check:checked) {
+  border-color: var(--ff-purple-lt);
+  background: rgba(168,85,247,0.08);
+}
+.preorder-item--limited:has(.preorder-item__check:checked) {
+  border-color: #ec4899;
+  background: rgba(236,72,153,0.08);
+}
+.preorder-item--special:has(.preorder-item__check:checked) {
+  border-color: #facc15;
+  background: rgba(250,204,21,0.07);
+}
+
+.preorder-item__check-label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  flex: 1;
+  min-width: 0;
+}
+
+.preorder-item__check {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--ff-purple-lt);
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.preorder-item__icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.preorder-item__name {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--ff-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.preorder-item__price {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--ff-yellow);
+  margin-left: 0.35rem;
+}
+
+.preorder-item__qty-label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--ff-muted);
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.preorder-item__qty {
+  background: var(--ff-surface);
+  border: 1.5px solid var(--ff-border);
+  border-radius: var(--radius-sm);
+  color: var(--ff-text);
+  font-family: var(--font);
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
+  transition: border-color var(--transition);
+}
+.preorder-item__qty:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+.preorder-item__qty:not(:disabled):focus {
+  outline: none;
+  border-color: var(--ff-purple-lt);
+  box-shadow: 0 0 0 2px rgba(168,85,247,0.25);
+}
+
+/* ── No-payment footer line ── */
+.preorder-form__no-payment {
+  text-align: center;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--ff-muted);
+  margin-top: -0.5rem;
+}
+
+/* ── Success state ── */
+.preorder-success {
+  max-width: 560px;
+  margin: 0 auto;
+  text-align: center;
+  background: var(--ff-surface);
+  border: 1.5px solid rgba(168,85,247,0.4);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.preorder-success__icon {
+  font-size: 3rem;
+  line-height: 1;
+  animation: successBounce 0.6s ease-out;
+}
+@keyframes successBounce {
+  0%   { transform: scale(0.6); opacity: 0; }
+  70%  { transform: scale(1.15); }
+  100% { transform: scale(1); opacity: 1; }
+}
+.preorder-success h3 {
+  font-size: 1.4rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--ff-purple-lt), var(--ff-pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.preorder-success p {
+  color: var(--ff-muted);
+  font-size: 0.95rem;
+}
+
+/* ── Find Us pre-order link ── */
+.find-us__preorder-link {
+  color: var(--ff-yellow);
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--transition);
+}
+.find-us__preorder-link:hover { color: var(--ff-pink); }
+
+/* ── Responsive tweaks for small screens ── */
+@media (max-width: 480px) {
+  .preorder-form { padding: 1.25rem; }
+  .preorder-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .preorder-item__name {
+    white-space: normal;
+  }
+}
