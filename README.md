@@ -26,8 +26,8 @@ All products live inside `index.html` as `<article class="product-card">` elemen
 Find the relevant `<article>` block and edit the `<h3>` (name) or `<p class="product-card__desc">` (description):
 
 ```html
-<h3 class="product-card__name">Spinner Ring</h3>
-<p class="product-card__desc">Smooth-spin ring that keeps your hands busy.</p>
+<h3 class="product-card__name">Spiral Fidget</h3>
+<p class="product-card__desc">Smooth-spin spiral that keeps your hands busy.</p>
 ```
 
 ### Change a price
