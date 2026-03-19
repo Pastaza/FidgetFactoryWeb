@@ -1,108 +1,478 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fidget Factory</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fidget Factory – Market Day at Selwyn College</title>
+  <meta name="description" content="Fidget Factory – grab your favourite fidget toys at our market day stall at Selwyn College, Auckland. Spinners, poppers, cubes and more!">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main>
-        <section class="hero">
-            <h1>Welcome to <span class="highlight">Fidget Factory</span></h1>
-            <p class="tagline">Buy it! I dare you.</p>
-        </section>
 
-        <section class="projects">
-            <h2>Products</h2>
-            <div class="project-grid">
-                <div class="product-card">
-                    <h3>Pass Through</h3>
-                    <p>A smooth sliding fidget that passes through your fingers with ease.</p>
-                </div>
-                <div class="product-card">
-                    <h3>Gear Spinner</h3>
-                    <p>A gear-shaped fidget that spins around your finger.</p>
-                </div>
-                <div class="product-card">
-                    <h3>Bearing Spinner</h3>
-                    <p>A classic-style fidget spinner powered by smooth bearings.</p>
-                </div>
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar" role="banner">
+    <div class="navbar__inner">
+      <a href="#" class="navbar__logo" aria-label="Fidget Factory home">
+        🌀 <span>Fidget Factory</span>
+      </a>
+      <nav aria-label="Site navigation">
+        <ul class="navbar__links">
+          <li><a href="#products">Products</a></li>
+          <li><a href="#preorder">Pre-Order</a></li>
+          <li><a href="#find-us">Find Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" aria-label="Hero banner">
+
+      <!-- Floating decorative shapes (aria-hidden) -->
+      <div class="hero__shapes" aria-hidden="true">
+        <span class="shape shape--circle shape--1">🌀</span>
+        <span class="shape shape--circle shape--2">⭐</span>
+        <span class="shape shape--circle shape--3">🎉</span>
+        <span class="shape shape--circle shape--4">💥</span>
+        <span class="shape shape--circle shape--5">🌈</span>
+        <span class="shape shape--circle shape--6">✨</span>
+        <div class="blob blob--1"></div>
+        <div class="blob blob--2"></div>
+        <div class="blob blob--3"></div>
+      </div>
+
+      <div class="hero__content">
+        <p class="hero__pre-title">🎪 Market Day is HERE</p>
+        <h1 class="hero__title">
+          Welcome to<br>
+          <span class="hero__brand">Fidget Factory</span>
+        </h1>
+        <p class="hero__sub">
+          Spinners · Poppers · Cubes · Snakes &amp; More<br>
+          <strong>Grab yours at Selwyn College, Auckland!</strong>
+        </p>
+        <div class="hero__ctas">
+          <a href="#products" class="btn btn--primary">Shop Now 🛒</a>
+          <a href="#preorder" class="btn btn--outline">Pre-Order Free 📋</a>
+          <a href="#find-us" class="btn btn--outline">Find Us 📍</a>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ===== PRODUCTS ===== -->
+    <section class="products" id="products" aria-labelledby="products-heading">
+      <div class="section-inner">
+        <h2 id="products-heading" class="section-title">Our Products</h2>
+        <p class="section-sub">All prices in NZD · Cash &amp; EFTPOS accepted</p>
+
+        <div class="product-grid">
+
+          <!-- Card 1 -->
+          <article class="product-card" aria-label="Spiral Fidget">
+            <div class="product-card__badge badge--bestseller">Best Seller ⭐</div>
+            <div class="product-card__icon" aria-hidden="true">🌀</div>
+            <div class="product-card__body">
+              <h3 class="product-card__name">Spiral Fidget</h3>
+              <p class="product-card__desc">Smooth-spin spiral that keeps your hands busy. Satisfying every single time.</p>
+              <div class="product-card__colours" aria-label="Available in multiple colours">
+                <span class="swatch swatch--red"></span>
+                <span class="swatch swatch--blue"></span>
+                <span class="swatch swatch--green"></span>
+                <span class="swatch swatch--yellow"></span>
+                <span class="swatch swatch--pink"></span>
+                <span class="swatch swatch--purple"></span>
+                <span class="colours-label">Multiple colours</span>
+              </div>
+              <p class="product-card__price"><span class="price-currency">NZ$</span>5<span class="price-cents">.00</span></p>
+              <a href="#find-us" class="btn btn--card">Get One 🛒</a>
             </div>
-        </section>
+          </article>
 
-        <!-- 1. The Pre-Order Form -->
-        <section class="pre-order-section">
-            <h2>Pre-Order / Interest Form</h2>
-            <form id="preOrderForm">
-                <label for="name">Name:</label>
-                <input type="text" id="name" required>
+          <!-- Card 1b – Limited Edition -->
+          <article class="product-card product-card--limited-edition" aria-label="Limited Edition Multi-Colour Spiral Fidget">
+            <div class="product-card__badge badge--limited-edition">Limited Edition 🌈</div>
+            <div class="product-card__icon" aria-hidden="true">🌀</div>
+            <div class="product-card__body">
+              <h3 class="product-card__name">Multi-Colour Spiral <span class="limited-tag">Limited</span></h3>
+              <p class="product-card__desc">A one-of-a-kind rainbow spiral fidget – swirling through every colour at once. Once they're gone, they're gone!</p>
+              <div class="product-card__colours product-card__colours--rainbow" aria-label="Rainbow multi-colour edition">
+                <span class="swatch swatch--red"></span>
+                <span class="swatch swatch--orange"></span>
+                <span class="swatch swatch--yellow"></span>
+                <span class="swatch swatch--green"></span>
+                <span class="swatch swatch--blue"></span>
+                <span class="swatch swatch--purple"></span>
+                <span class="swatch swatch--pink"></span>
+                <span class="colours-label colours-label--rainbow">Rainbow Edition</span>
+              </div>
+              <p class="product-card__price"><span class="price-currency">NZ$</span>7<span class="price-cents">.00</span></p>
+              <a href="#find-us" class="btn btn--card btn--card-rainbow">Get One 🌈</a>
+            </div>
+          </article>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" required>
+          <!-- Card 1c – Special Limited Edition Passthrough -->
+          <article class="product-card product-card--passthrough" aria-label="Special Limited Edition Passthrough Fidget">
+            <div class="product-card__badge badge--passthrough">✨ Special Edition</div>
+            <div class="product-card__icon" aria-hidden="true">🔮</div>
+            <div class="product-card__body">
+              <h3 class="product-card__name">Passthrough <span class="passthrough-tag">Special</span></h3>
+              <p class="product-card__desc">Every single colour swirled into one stunning fidget – slide it through your fingers and watch the rainbow flow. Strictly limited stock!</p>
+              <div class="product-card__colours product-card__colours--passthrough" aria-label="All colours blended into one fidget">
+                <span class="swatch swatch--red"></span>
+                <span class="swatch swatch--orange"></span>
+                <span class="swatch swatch--yellow"></span>
+                <span class="swatch swatch--green"></span>
+                <span class="swatch swatch--blue"></span>
+                <span class="swatch swatch--purple"></span>
+                <span class="swatch swatch--pink"></span>
+                <span class="colours-label colours-label--passthrough">All colours in one!</span>
+              </div>
+              <p class="product-card__price"><span class="price-currency">NZ$</span>8<span class="price-cents">.00</span></p>
+              <a href="#find-us" class="btn btn--card btn--card-passthrough">Get One ✨</a>
+            </div>
+          </article>
 
-                <label for="fidget">Which fidget are you interested in?</label>
-                <select id="fidget" required>
-                    <option value="">Select a fidget...</option>
-                    <option value="Pass through">Pass through</option>
-                    <option value="Gear spinner">Gear spinner</option>
-                    <option value="Bearing spinner">Bearing spinner</option>
-                </select>
+          <!-- Card 2 -->
+          <article class="product-card" aria-label="Octapuss Fidget">
+            <div class="product-card__badge badge--new">New 🆕</div>
+            <div class="product-card__icon" aria-hidden="true">🐙</div>
+            <div class="product-card__body">
+              <h3 class="product-card__name">Octapuss</h3>
+              <p class="product-card__desc">Eight squishy arms of fidgeting fun – stretch, twist, and squish to your heart's content.</p>
+              <div class="product-card__colours" aria-label="Available in multiple colours">
+                <span class="swatch swatch--red"></span>
+                <span class="swatch swatch--blue"></span>
+                <span class="swatch swatch--green"></span>
+                <span class="swatch swatch--yellow"></span>
+                <span class="swatch swatch--pink"></span>
+                <span class="swatch swatch--purple"></span>
+                <span class="colours-label">Multiple colours</span>
+              </div>
+              <p class="product-card__price"><span class="price-currency">NZ$</span>8<span class="price-cents">.00</span></p>
+              <a href="#find-us" class="btn btn--card">Get One 🛒</a>
+            </div>
+          </article>
 
-                <label for="message">Message (Optional):</label>
-                <textarea id="message"></textarea>
+          <!-- Card 3 -->
+          <article class="product-card" aria-label="Pop Bubble Pad">
+            <div class="product-card__badge badge--popular">Popular 🔥</div>
+            <div class="product-card__icon" aria-hidden="true">🫧</div>
+            <div class="product-card__body">
+              <h3 class="product-card__name">Pop Bubble Pad</h3>
+              <p class="product-card__desc">Reusable silicone bubble popper – pop them all, flip it over, start again. So satisfying.</p>
+              <div class="product-card__colours" aria-label="Available in multiple colours">
+                <span class="swatch swatch--red"></span>
+                <span class="swatch swatch--blue"></span>
+                <span class="swatch swatch--green"></span>
+                <span class="swatch swatch--yellow"></span>
+                <span class="swatch swatch--pink"></span>
+                <span class="swatch swatch--purple"></span>
+                <span class="colours-label">Multiple colours</span>
+              </div>
+              <p class="product-card__price"><span class="price-currency">NZ$</span>6<span class="price-cents">.00</span></p>
+              <a href="#find-us" class="btn btn--card">Get One 🛒</a>
+            </div>
+          </article>
 
-                <button type="submit">Submit Pre-Order</button>
-                <p id="formStatus" style="display:none;"></p>
-            </form>
-        </section>
-    </main>
+          <!-- Card 4 -->
+          <article class="product-card" aria-label="Infinity Cube">
+            <div class="product-card__icon" aria-hidden="true">🔲</div>
+            <div class="product-card__body">
+              <h3 class="product-card__name">Infinity Cube</h3>
+              <p class="product-card__desc">Fold and flip this compact cube in an endless loop – great for focus and stress relief.</p>
+              <div class="product-card__colours" aria-label="Available in multiple colours">
+                <span class="swatch swatch--red"></span>
+                <span class="swatch swatch--blue"></span>
+                <span class="swatch swatch--green"></span>
+                <span class="swatch swatch--yellow"></span>
+                <span class="swatch swatch--pink"></span>
+                <span class="swatch swatch--purple"></span>
+                <span class="colours-label">Multiple colours</span>
+              </div>
+              <p class="product-card__price"><span class="price-currency">NZ$</span>7<span class="price-cents">.00</span></p>
+              <a href="#find-us" class="btn btn--card">Get One 🛒</a>
+            </div>
+          </article>
 
-    <footer>
-        <p>Made by Fidget Factory</p>
-    </footer>
+          <!-- Card 5 -->
+          <article class="product-card" aria-label="Wacky Track Snake">
+            <div class="product-card__badge badge--limited">Limited 🎯</div>
+            <div class="product-card__icon" aria-hidden="true">🐍</div>
+            <div class="product-card__body">
+              <h3 class="product-card__name">Wacky Track</h3>
+              <p class="product-card__desc">Snap-and-link chain that morphs into endless shapes – keep your fingers moving all day.</p>
+              <div class="product-card__colours" aria-label="Available in multiple colours">
+                <span class="swatch swatch--red"></span>
+                <span class="swatch swatch--blue"></span>
+                <span class="swatch swatch--green"></span>
+                <span class="swatch swatch--yellow"></span>
+                <span class="swatch swatch--pink"></span>
+                <span class="swatch swatch--purple"></span>
+                <span class="colours-label">Multiple colours</span>
+              </div>
+              <p class="product-card__price"><span class="price-currency">NZ$</span>9<span class="price-cents">.00</span></p>
+              <a href="#find-us" class="btn btn--card">Get One 🛒</a>
+            </div>
+          </article>
 
-    <!-- 2. Serverless API Integration Script -->
-    <script>
-        document.getElementById('preOrderForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const statusText = document.getElementById('formStatus');
-            statusText.style.display = 'block';
-            statusText.innerText = 'Submitting...';
+          <!-- Card 6 -->
+          <article class="product-card" aria-label="Clicker Pen">
+            <div class="product-card__icon" aria-hidden="true">🖊️</div>
+            <div class="product-card__body">
+              <h3 class="product-card__name">Clicker Pen</h3>
+              <p class="product-card__desc">A real, working pen with a satisfying clicky top and fidget buttons on the side.</p>
+              <div class="product-card__colours" aria-label="Available in multiple colours">
+                <span class="swatch swatch--red"></span>
+                <span class="swatch swatch--blue"></span>
+                <span class="swatch swatch--green"></span>
+                <span class="swatch swatch--yellow"></span>
+                <span class="swatch swatch--pink"></span>
+                <span class="swatch swatch--purple"></span>
+                <span class="colours-label">Multiple colours</span>
+              </div>
+              <p class="product-card__price"><span class="price-currency">NZ$</span>5<span class="price-cents">.00</span></p>
+              <a href="#find-us" class="btn btn--card">Get One 🛒</a>
+            </div>
+          </article>
 
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const fidgetChoice = document.getElementById('fidget').value;
-            const message = document.getElementById('message').value;
+        </div><!-- /product-grid -->
+      </div>
+    </section>
 
-            try {
-                // Send data to the Vercel serverless function
-                const response = await fetch('/api/submit', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        name: name,
-                        email: email,
-                        fidgetChoice: fidgetChoice,
-                        message: message
-                    })
-                });
+    <!-- ===== PRE-ORDER ===== -->
+    <!--
+      SETUP: Replace YOUR_FORM_ID below with your Formspree form ID.
+      Sign up free at https://formspree.io → New Form → copy the ID (e.g. xpwzabcd).
+      Submissions will be emailed to you so you can count up demand before Market Day.
+    -->
+    <section class="preorder" id="preorder" aria-labelledby="preorder-heading">
+      <div class="section-inner">
+        <h2 id="preorder-heading" class="section-title section-title--light">📋 Pre-Order Interest</h2>
+        <p class="section-sub section-sub--light">Let us know what you want so we can make sure we have enough on the day!</p>
 
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
+        <div class="preorder__notice" role="note">
+          <span class="preorder__notice-icon" aria-hidden="true">💡</span>
+          <div>
+            <strong>How it works:</strong> This is completely <strong>free to submit</strong> – no payment, no commitment. It simply helps us know how much stock to bring. Come to our stall on Market Day, pick up your fidgets, and pay there. 💵
+          </div>
+        </div>
 
-                statusText.innerText = 'Thank you! Your pre-order interest has been saved.';
-                statusText.style.color = 'green';
-                document.getElementById('preOrderForm').reset();
-            } catch (error) {
-                console.error('Error:', error);
-                statusText.innerText = 'Error submitting. Please try again.';
-                statusText.style.color = 'red';
-            }
-        });
-    </script>
+        <!-- ── Pre-order form ──
+             ⚠️  SETUP REQUIRED: Replace YOUR_FORM_ID in the action attribute below
+             with your real Formspree form ID (see https://formspree.io to create one).
+        ── -->
+        <form class="preorder-form" id="preorder-form"
+              action="https://formspree.io/f/YOUR_FORM_ID"
+              data-setup="Replace YOUR_FORM_ID in the action attribute above with your Formspree form ID"
+              method="POST" novalidate>
+
+          <!-- Hidden subject line for email notifications -->
+          <input type="hidden" name="_subject" value="New Fidget Factory Pre-Order Interest">
+
+          <!-- Name -->
+          <div class="form-group">
+            <label class="form-label" for="preorder-name">
+              Your Name <span class="form-required" aria-label="required">*</span>
+            </label>
+            <input class="form-input" type="text" id="preorder-name" name="name"
+                   placeholder="e.g. Alex" required autocomplete="name">
+          </div>
+
+          <!-- Products -->
+          <fieldset class="form-fieldset">
+            <legend class="form-label">
+              What would you like? <span class="form-required" aria-label="required">*</span>
+            </legend>
+            <p class="form-hint">Tick each item you're interested in and choose a quantity. Prices shown for reference – pay on the day!</p>
+
+            <div class="preorder-items">
+
+              <div class="preorder-item">
+                <label class="preorder-item__check-label">
+                  <input type="checkbox" class="preorder-item__check" name="want_spiral" value="yes">
+                  <span class="preorder-item__icon" aria-hidden="true">🌀</span>
+                  <span class="preorder-item__name">Spiral Fidget <span class="preorder-item__price">NZ$5</span></span>
+                </label>
+                <label class="preorder-item__qty-label" aria-label="Quantity for Spiral Fidget">
+                  Qty:
+                  <select class="preorder-item__qty" name="qty_spiral" disabled aria-disabled="true">
+                    <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                    <option value="4">4</option><option value="5">5</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="preorder-item preorder-item--limited">
+                <label class="preorder-item__check-label">
+                  <input type="checkbox" class="preorder-item__check" name="want_multicolour_spiral" value="yes">
+                  <span class="preorder-item__icon" aria-hidden="true">🌀</span>
+                  <span class="preorder-item__name">Multi-Colour Spiral <span class="limited-tag">Limited</span> <span class="preorder-item__price">NZ$7</span></span>
+                </label>
+                <label class="preorder-item__qty-label" aria-label="Quantity for Multi-Colour Spiral">
+                  Qty:
+                  <select class="preorder-item__qty" name="qty_multicolour_spiral" disabled aria-disabled="true">
+                    <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="preorder-item preorder-item--special">
+                <label class="preorder-item__check-label">
+                  <input type="checkbox" class="preorder-item__check" name="want_passthrough" value="yes">
+                  <span class="preorder-item__icon" aria-hidden="true">🔮</span>
+                  <span class="preorder-item__name">Passthrough <span class="passthrough-tag">Special</span> <span class="preorder-item__price">NZ$8</span></span>
+                </label>
+                <label class="preorder-item__qty-label" aria-label="Quantity for Passthrough Special">
+                  Qty:
+                  <select class="preorder-item__qty" name="qty_passthrough" disabled aria-disabled="true">
+                    <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="preorder-item">
+                <label class="preorder-item__check-label">
+                  <input type="checkbox" class="preorder-item__check" name="want_octapuss" value="yes">
+                  <span class="preorder-item__icon" aria-hidden="true">🐙</span>
+                  <span class="preorder-item__name">Octapuss <span class="preorder-item__price">NZ$8</span></span>
+                </label>
+                <label class="preorder-item__qty-label" aria-label="Quantity for Octapuss">
+                  Qty:
+                  <select class="preorder-item__qty" name="qty_octapuss" disabled aria-disabled="true">
+                    <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                    <option value="4">4</option><option value="5">5</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="preorder-item">
+                <label class="preorder-item__check-label">
+                  <input type="checkbox" class="preorder-item__check" name="want_bubble_pad" value="yes">
+                  <span class="preorder-item__icon" aria-hidden="true">🫧</span>
+                  <span class="preorder-item__name">Pop Bubble Pad <span class="preorder-item__price">NZ$6</span></span>
+                </label>
+                <label class="preorder-item__qty-label" aria-label="Quantity for Pop Bubble Pad">
+                  Qty:
+                  <select class="preorder-item__qty" name="qty_bubble_pad" disabled aria-disabled="true">
+                    <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                    <option value="4">4</option><option value="5">5</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="preorder-item">
+                <label class="preorder-item__check-label">
+                  <input type="checkbox" class="preorder-item__check" name="want_infinity_cube" value="yes">
+                  <span class="preorder-item__icon" aria-hidden="true">🔲</span>
+                  <span class="preorder-item__name">Infinity Cube <span class="preorder-item__price">NZ$7</span></span>
+                </label>
+                <label class="preorder-item__qty-label" aria-label="Quantity for Infinity Cube">
+                  Qty:
+                  <select class="preorder-item__qty" name="qty_infinity_cube" disabled aria-disabled="true">
+                    <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                    <option value="4">4</option><option value="5">5</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="preorder-item">
+                <label class="preorder-item__check-label">
+                  <input type="checkbox" class="preorder-item__check" name="want_wacky_track" value="yes">
+                  <span class="preorder-item__icon" aria-hidden="true">🐍</span>
+                  <span class="preorder-item__name">Wacky Track <span class="preorder-item__price">NZ$9</span></span>
+                </label>
+                <label class="preorder-item__qty-label" aria-label="Quantity for Wacky Track">
+                  Qty:
+                  <select class="preorder-item__qty" name="qty_wacky_track" disabled aria-disabled="true">
+                    <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                    <option value="4">4</option><option value="5">5</option>
+                  </select>
+                </label>
+              </div>
+
+              <div class="preorder-item">
+                <label class="preorder-item__check-label">
+                  <input type="checkbox" class="preorder-item__check" name="want_clicker_pen" value="yes">
+                  <span class="preorder-item__icon" aria-hidden="true">🖊️</span>
+                  <span class="preorder-item__name">Clicker Pen <span class="preorder-item__price">NZ$5</span></span>
+                </label>
+                <label class="preorder-item__qty-label" aria-label="Quantity for Clicker Pen">
+                  Qty:
+                  <select class="preorder-item__qty" name="qty_clicker_pen" disabled aria-disabled="true">
+                    <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                    <option value="4">4</option><option value="5">5</option>
+                  </select>
+                </label>
+              </div>
+
+            </div><!-- /preorder-items -->
+          </fieldset>
+
+          <p class="form-error" id="preorder-error" role="alert" hidden></p>
+
+          <button type="submit" class="btn btn--primary btn--wide" id="preorder-submit">
+            Register My Interest 📋
+          </button>
+          <p class="preorder-form__no-payment">🎉 No payment required – you pay at the stall on Market Day!</p>
+
+        </form>
+
+        <!-- Success state (shown after submission) -->
+        <div class="preorder-success" id="preorder-success" hidden>
+          <span class="preorder-success__icon" aria-hidden="true">🎉</span>
+          <h3>Thanks for registering your interest!</h3>
+          <p>We've noted what you'd like. Just come find us at the <strong>Fidget Factory</strong> stall on Market Day and pay there. See you soon! 🌀</p>
+          <a href="#products" class="btn btn--primary">Browse Products ↑</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== FIND US ===== -->
+    <section class="find-us" id="find-us" aria-labelledby="findus-heading">
+      <div class="section-inner find-us__inner">
+
+        <div class="find-us__info">
+          <h2 id="findus-heading" class="section-title">📍 Find Us at Market Day</h2>
+          <ul class="find-us__list" role="list">
+            <li>📚 <strong>Selwyn College</strong>, Auckland, New Zealand</li>
+            <li>🏫 Look for the <strong>Fidget Factory</strong> stall – you can't miss us!</li>
+            <li>💵 We accept <strong>Cash &amp; EFTPOS</strong></li>
+            <li>📋 <a href="#preorder" class="find-us__preorder-link">Pre-order your interest</a> so we know what to bring!</li>
+            <li>🎒 Stock is <strong>limited</strong> – first come, first served</li>
+          </ul>
+        </div>
+
+        <div class="find-us__payment">
+          <h3>Payment &amp; Pickup</h3>
+          <div class="payment-badges">
+            <span class="payment-badge">💵 Cash</span>
+            <span class="payment-badge">📱 EFTPOS</span>
+          </div>
+          <p>Walk up to our stall, pick up your fidgets, and pay on the spot. Want to make sure we stock your favourite? <a href="#preorder" class="find-us__preorder-link">Register your interest above</a> – it's free! 🎉</p>
+          <a href="#products" class="btn btn--primary btn--wide">Browse Products ↑</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <p class="footer__logo">🌀 Fidget Factory</p>
+      <p class="footer__tagline">Keeping hands busy, one fidget at a time.</p>
+      <p class="footer__copy">© 2025 Fidget Factory · Market Day Stall · Selwyn College, Auckland</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
