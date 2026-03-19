@@ -1196,6 +1196,39 @@ ul { list-style: none; }
   box-shadow: 0 0 0 2px rgba(168,85,247,0.25);
 }
 
+.preorder-item__color-label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--ff-muted);
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.preorder-item__color {
+  background: var(--ff-surface);
+  border: 1.5px solid var(--ff-border);
+  border-radius: var(--radius-sm);
+  color: var(--ff-text);
+  font-family: var(--font);
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
+  transition: border-color var(--transition);
+}
+.preorder-item__color:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+.preorder-item__color:not(:disabled):focus {
+  outline: none;
+  border-color: var(--ff-purple-lt);
+  box-shadow: 0 0 0 2px rgba(168,85,247,0.25);
+}
+
 /* ── No-payment footer line ── */
 .preorder-form__no-payment {
   text-align: center;

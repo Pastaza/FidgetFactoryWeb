@@ -18,16 +18,23 @@
 
   if (!form) return;
 
-  /* ── Enable / disable qty selector when checkbox changes ── */
+  /* ── Enable / disable qty and colour selectors when checkbox changes ── */
   form.addEventListener('change', function (e) {
     if (!e.target.matches('.preorder-item__check')) return;
-    var item = e.target.closest('.preorder-item');
-    var qty  = item && item.querySelector('.preorder-item__qty');
-    if (!qty) return;
-    qty.disabled    = !e.target.checked;
-    qty.setAttribute('aria-disabled', e.target.checked ? 'false' : 'true');
-    /* Reset to 1 when unchecked so stale values don't get sent */
-    if (!e.target.checked) qty.selectedIndex = 0;
+    var item  = e.target.closest('.preorder-item');
+    var qty   = item && item.querySelector('.preorder-item__qty');
+    var color = item && item.querySelector('.preorder-item__color');
+    if (qty) {
+      qty.disabled = !e.target.checked;
+      qty.setAttribute('aria-disabled', e.target.checked ? 'false' : 'true');
+      /* Reset to first option when unchecked so stale values don't get sent */
+      if (!e.target.checked) qty.selectedIndex = 0;
+    }
+    if (color) {
+      color.disabled = !e.target.checked;
+      color.setAttribute('aria-disabled', e.target.checked ? 'false' : 'true');
+      if (!e.target.checked) color.selectedIndex = 0;
+    }
   });
 
   /* ── Form submit (AJAX → Formspree) ── */
